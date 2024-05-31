@@ -1,0 +1,16 @@
+<!-- templates/properties/tenant_portal.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tenant Portal</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'properties/css/styles.css' %}">
+</head>
+<body>
+    <h1>Welcome to the Tenant Portal</h1>
+    <p>
+        <a href="{% url 'property_list' %}" class="button">View Available Properties</a><br>
+        <a href="{% url 'news_list' %}" class="button">Latest News</a>
+    </p>
+</body>
+</html>

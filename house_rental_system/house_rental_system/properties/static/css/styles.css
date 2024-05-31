@@ -1,0 +1,98 @@
+/* properties/static/properties/css/styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%;
+}
+
+strong {
+    color: #000;
+}
+
+em {
+    color: #666;
+}
+/* static/properties/css/styles.css */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 3px #666;
+}
+
+.button:hover {background-color: #0056b3}
+
+.button:active {
+    background-color: #0056b3;
+    box-shadow: 0 2px #666;
+    transform: translateY(1px);
+}
+.contact-landlord {
+    display: inline-block;
+    background-color: #25D366;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.contact-landlord:hover {
+    background-color: #128C7E;
+}
+.contact-landlord {
+    display: inline-block;
+    background-color: #25D366;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.contact-landlord:hover {
+    background-color: #128C7E;
+}
+.property-info {
+    max-width: 600px; /* Limiting the width of the content */
+    margin: 0 auto; /* Centering the container horizontally */
+    display: flex; /* Using flexbox */
+    flex-direction: column; /* Aligning children vertically */
+    justify-content: center; /* Centering vertically */
+    align-items: center; /* Centering horizontally */
+    height: 100vh; /* Setting the height to 100% of viewport height */
+}

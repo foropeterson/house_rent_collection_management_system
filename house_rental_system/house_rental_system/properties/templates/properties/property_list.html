@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Properties</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'properties/css/styles.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 80%;
+            text-align: center; /* Center text within the container */
+        }
+        .property-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .property-item {
+            background: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center text within each property item */
+        }
+        .property-item strong {
+            color: #000;
+        }
+        .property-item em {
+            color: #666;
+        }
+        .property-item .buttons {
+            margin-top: 10px;
+        }
+        .property-item .buttons a {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .property-item .buttons a.details {
+            background-color: #008CBA;
+        }
+        .property-item .buttons a.contact {
+            background-color: #f44336;
+        }
+        .property-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Available Properties</h1>
+        <ul class="property-list">
+            {% for property in properties %}
+            <li class="property-item">
+                <strong>{{ property.title }}</strong><br>
+                {% if property.image %}
+                    <img src="{{ property.image.url }}" alt="{{ property.title }}"><br>
+                {% endif %}
+                <strong>Address:</strong> {{ property.address }}<br>
+                <strong>Rent:</strong> ${{ property.rent }}<br>
+                <strong>Description:</strong> {{ property.description }}<br>
+                <div class="buttons">
+                    <a href="{% url 'property_detail' property.pk %}" class="details">View Details</a>
+                    <a href="{% url 'landlord_portal' %}" class="contact-landlord">Landlord Portal</a>
+                </div>
+            </li>
+        {% empty %}
+            <li>No properties available.</li>
+        {% endfor %}
+        
+        </ul>
+    </div>
+</body>
+</html>

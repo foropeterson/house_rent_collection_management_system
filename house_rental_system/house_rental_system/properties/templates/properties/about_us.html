@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - House Rental System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 3px #666;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .button:active {
+            background-color: #0056b3;
+            box-shadow: 0 2px #666;
+            transform: translateY(1px);
+        }
+
+        .dropdown-content {
+            display: none;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .dropdown-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .dropdown-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .dropdown-content ul li {
+            margin-bottom: 5px;
+        }
+
+        .dropdown.active .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About Us</h1>
+        <p>Welcome to our House Rental System. We strive to provide the best rental experience for our customers.  am good</p>
+        <div class="dropdown">
+            <a href="#" class="button">Learn More</a>
+            <div class="dropdown-content" id="moreContent">
+                <p>Here are some of the services we offer:</p>
+                <ul>
+                    <li>Rent Collections</li>
+                    <li>Property Management</li>
+                    <li>Search Housing Online</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.button').addEventListener('click', function() {
+            var dropdownContent = document.getElementById('moreContent');
+            var dropdown = document.querySelector('.dropdown');
+            dropdown.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

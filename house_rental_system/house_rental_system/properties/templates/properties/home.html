@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - House Rental System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #f8f9fa;
+            padding: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #0056b3;
+        }
+
+        .main-content {
+            display: flex;
+            flex: 1;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .sidebar a:hover {
+            background-color: #e2e6ea;
+            color: #0056b3;
+        }
+
+        .container {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 3px #666;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .button:active {
+            background-color: #0056b3;
+            box-shadow: 0 2px #666;
+            transform: translateY(1px);
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to House Rental System</h1>
+    </header>
+    
+    <aside class="sidebar">
+        <a href="{% url 'property_list' %}">View Available Properties</a>
+        <a href="{% url 'news_list' %}">Latest News</a>
+        <a href="{% url 'post_property' %}">Post a New Property</a>
+        <a href="{% url 'contact_us' %}">Contact Us</a>
+        <a href="{% url 'about_us' %}">About Us</a>
+    </aside>
+    
+        <div class="container">
+            <a href="{% url 'property_list' %}" class="button">View Available Properties</a>
+            <a href="{% url 'news_list' %}" class="button">Latest News</a>
+            <a href="{% url 'post_property' %}" class="button">Post a New Property</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 House Rental System. All rights reserved proudly done by this is a property of wayles digital developers courtesy of foro.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ property.title }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'properties/css/styles.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #007bff;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        .property-info {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .property-info img {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        .contact-landlord {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .contact-landlord:hover {
+            background-color: #0056b3;
+        }
+        /* Style for the Landlord Portal link */
+        .landlord-portal-link {
+            display: inline-block;
+            background-color: #dc3545; /* Red color */
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .landlord-portal-link:hover {
+            background-color: #c82333; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="property-info">
+        <h1>{{ property.title }}</h1>
+        <p><strong>Address:</strong> {{ property.address }}</p>
+        <p><strong>Rent:</strong> ${{ property.rent }}</p>
+        <p><strong>Description:</strong> {{ property.description }}</p>
+        {% if property.image %}
+            <img src="{{ property.image.url }}" alt="{{ property.title }}">
+        {% endif %}
+        <p><strong>Contact Landlord:</strong> 
+            <a href="{% url 'landlord_portal' %}" class="landlord-portal-link">Landlord Portal</a>
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!-- templates/properties/news_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'properties/css/styles.css' %}">
+</head>
+<body>
+    <h1>Latest News</h1>
+    <ul>
+    {% for item in news %}
+        <li>
+            <strong>{{ item.title }}</strong><br>
+            {{ item.content }}<br>
+            <em>Published on: {{ item.created_at }}</em><br>
+        </li>
+    {% empty %}
+        <li>No news available.</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

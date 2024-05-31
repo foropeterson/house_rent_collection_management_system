@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ property.title }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'properties/css/styles.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #007bff;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        .property-info {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 100vh; /* Set the height of the container to 100% of viewport height for vertical centering */
+}
+
+        .property-info img {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        .contact-whatsapp {
+            display: inline-block;
+            background-color: #25D366;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .contact-whatsapp:hover {
+            background-color: #128C7E;
+        }
+    </style>
+</head>
+<body>
+    <div class="property-info">
+        <h1>{{ property.title }}</h1>
+        <p><strong>Address:</strong> {{ property.address }}</p>
+        <p><strong>Rent:</strong> ${{ property.rent }}</p>
+        <p><strong>Description:</strong> {{ property.description }}</p>
+        {% if property.image %}
+        <img src="{{ property.image.url }}" alt="{{ property.title }}">
+        {% endif %}
+        <p><strong>Contact Landlord:</strong> 
+            <a href="whatsapp://send?phone=254110173956" class="contact-whatsapp">
+                Contact via WhatsApp
+            </a>
+        </p>
+        
+        
+        </p>
+    </div>
+</body>
+</html>
